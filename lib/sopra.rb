@@ -6,11 +6,10 @@ module Sopra
     attr_accessor :atts
     def initialize(atts = {})
       @atts = atts
-      yield if block_given?
     end
 
     def set(key = nil, value = nil)
-      atts[key] = value
+      @atts[key] = value
       yield self if block_given?
     end
 

@@ -10,8 +10,7 @@ module Sopra
     end
 
     def set(key = nil, value = nil)
-      value = value.is_a?(Proc) ? value.call : value
-      @atts[key] = value
+      @atts[key] = value.is_a?(Proc) ? value.call : value
     end
 
     def get(key)

@@ -1,11 +1,13 @@
 PATH
   remote: .
   specs:
-    sopra (0.1.1)
+    sopra (0.1.2)
+      byebug
 
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (11.1.3)
     diff-lcs (1.5.0)
     rake (12.3.3)
     rspec (3.11.0)
@@ -26,6 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   rake (~> 12.0)
   rspec (~> 3.0)
   sopra!

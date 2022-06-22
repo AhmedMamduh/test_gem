@@ -16,17 +16,10 @@ RSpec.describe Sopra do
   end
 
   it "`set` may receive a block for the value" do
-    new_obj.set do |s|
-      s.atts = { 'domain': 'env_domain' }
-    end
-    expect(new_obj.atts[:domain]).to eq 'env_domain'
+    value = -> { "env_domain" }
+    new_obj.set(:domain, value)
+    expect(new_obj.get(:domain)).to eq 'env_domain'
   end
-
-  # it "`set` may receive a block for the value" do
-  #   value = -> { "env_domain" }
-  #   new_obj.set(:domain, value)
-  #   expect(new_obj.get(:domain)).to eq 'env_domain'
-  # end
 
   let!(:initialized_instance) do
     Sopra::Configuration.new.tap do |s|

@@ -1,4 +1,5 @@
 require "sopra/version"
+require "byebug"
 
 module Sopra
   class Error < StandardError; end
@@ -9,8 +10,8 @@ module Sopra
     end
 
     def set(key = nil, value = nil)
+      value = value.is_a?(Proc) ? value.call : value
       @atts[key] = value
-      yield self if block_given?
     end
 
     def get(key)
